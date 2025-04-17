@@ -1,107 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulário de Vendas - LM Suínos</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e6d4be;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco de Vendas - LM Suínos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #692023;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
 
-    .container {
-      max-width: 600px;
-      margin: 30px auto;
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
+        .logo {
+            margin-bottom: 20px;
+        }
 
-    .logo {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+        .form-container {
+            background-color: #e6d4be;
+            color: #692023;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 100%;
+        }
 
-    .logo img {
-      max-width: 200px;
-    }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    h1 {
-      text-align: center;
-      color: #692023;
-      font-size: 24px;
-    }
+        .input-box {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
 
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
+        .input-box label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
+        .input-box input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-    button {
-      margin-top: 20px;
-      width: 100%;
-      padding: 12px;
-      background-color: #692023;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+        button {
+            background-color: #692023;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-    button:hover {
-      background-color: #4d1618;
-    }
-  </style>
+        button:hover {
+            background-color: #4a1618;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="logo">
-      <img src="https://i.imgur.com/vpyCHSf.jpeg" alt="Logo LM Suínos">
+    <img class="logo" src="LOGO-DA-LM-SUINOS-AQUI" alt="LM Suínos" width="150">
+
+    <div class="form-container">
+        <h1>Bloco de Vendas</h1>
+        <form action="#" method="POST">
+
+            <div class="input-box">
+                <label for="data-pedido">Data do Pedido</label>
+                <input type="date" id="data-pedido" name="Data do Pedido" required>
+            </div>
+
+            <div class="input-box">
+                <label for="nome-cliente">Nome do Cliente</label>
+                <input type="text" id="nome-cliente" name="Nome do Cliente" placeholder="Digite o nome" required>
+            </div>
+
+            <div class="input-box">
+                <label for="endereco">Endereço da Entrega</label>
+                <input type="text" id="endereco" name="Endereço da Entrega" placeholder="Digite o endereço" required>
+            </div>
+
+            <div class="input-box">
+                <label for="nome-produto">Nome do Produto</label>
+                <input type="text" id="nome-produto" name="Nome do Produto" placeholder="Digite o produto" required>
+            </div>
+
+            <div class="input-box">
+                <label for="quantidade">Quantidade</label>
+                <input type="number" id="quantidade" name="Quantidade" placeholder="Digite a quantidade" required>
+            </div>
+
+            <div class="input-box">
+                <label for="valor-unitario">Valor Unitário (R$)</label>
+                <input type="text" id="valor-unitario" name="Valor Unitário" placeholder="Digite o valor unitário" required>
+            </div>
+
+            <div class="input-box">
+                <label for="peso-unitario">Peso Unitário (kg)</label>
+                <input type="text" id="peso-unitario" name="Peso Unitário" placeholder="Digite o peso unitário" required>
+            </div>
+
+            <div class="input-box">
+                <label for="peso-total">Peso Total (kg)</label>
+                <input type="text" id="peso-total" name="Peso Total" placeholder="Digite o peso total" required>
+            </div>
+
+            <div class="input-box">
+                <label for="valor-total">Valor Total (R$)</label>
+                <input type="text" id="valor-total" name="Valor Total" placeholder="Digite o valor total" required>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
     </div>
-    <h1>Registro de Vendas</h1>
-    <form id="vendaForm">
-      <label for="data">Data do Pedido</label>
-      <input type="date" id="data" name="data" required>
-
-      <label for="cliente">Nome do Cliente</label>
-      <input type="text" id="cliente" name="cliente" required>
-
-      <label for="endereco">Endereço da Entrega</label>
-      <textarea id="endereco" name="endereco" required></textarea>
-
-      <label for="produto">Nome do Produto</label>
-      <input type="text" id="produto" name="produto" required>
-
-      <label for="quantidade">Quantidade</label>
-      <input type="number" id="quantidade" name="quantidade" required>
-
-      <label for="peso_unitario">Peso Unitário (kg)</label>
-      <input type="number" step="0.01" id="peso_unitario" name="peso_unitario" required>
-
-      <label for="peso_total">Peso Total (kg)</label>
-      <input type="number" step="0.01" id="peso_total" name="peso_total" required>
-
-      <label for="valor_total">Valor Total (R$)</label>
-      <input type="number" step="0.01" id="valor_total" name="valor_total" required>
-
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
 </body>
+
 </html>
 
